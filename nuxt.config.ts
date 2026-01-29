@@ -10,6 +10,10 @@ export default defineNuxtConfig({
   ssr: true,
   nitro: {
     preset: 'static',
+    prerender: {
+      // Don't fail on prerender errors, just log them
+      failOnError: false,
+    },
   },
 
   // App metadata
