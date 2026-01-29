@@ -1,0 +1,127 @@
+[
+  {
+    "name": "Animals",
+    "emoji": "🐾",
+    "slug": "animals"
+  },
+  {
+    "name": "Art & Design",
+    "emoji": "🎨",
+    "slug": "art-design"
+  },
+  {
+    "name": "Books & Literature",
+    "emoji": "📚",
+    "slug": "books-literature"
+  },
+  {
+    "name": "Education & Reference",
+    "emoji": "🎓",
+    "slug": "education-reference"
+  },
+  {
+    "name": "Environment & Sustainability",
+    "emoji": "🌱",
+    "slug": "environment-sustainability"
+  },
+  {
+    "name": "Finance & Crypto",
+    "emoji": "💰",
+    "slug": "finance-crypto"
+  },
+  {
+    "name": "Food & Recipes",
+    "emoji": "🍔",
+    "slug": "food-recipes"
+  },
+  {
+    "name": "Games & Gaming",
+    "emoji": "🎮",
+    "slug": "games-gaming"
+  },
+  {
+    "name": "Geography & Maps",
+    "emoji": "🗺️",
+    "slug": "geography-maps"
+  },
+  {
+    "name": "Government & Open Data",
+    "emoji": "🏛️",
+    "slug": "government-open-data"
+  },
+  {
+    "name": "Health & Fitness",
+    "emoji": "🏥",
+    "slug": "health-fitness"
+  },
+  {
+    "name": "Jobs & Business",
+    "emoji": "💼",
+    "slug": "jobs-business"
+  },
+  {
+    "name": "Language & Translation",
+    "emoji": "🌍",
+    "slug": "language-translation"
+  },
+  {
+    "name": "Movies, TV & Entertainment",
+    "emoji": "🎬",
+    "slug": "movies-tv-entertainment"
+  },
+  {
+    "name": "Music & Audio",
+    "emoji": "🎵",
+    "slug": "music-audio"
+  },
+  {
+    "name": "News & Media",
+    "emoji": "📰",
+    "slug": "news-media"
+  },
+  {
+    "name": "Science & Nature",
+    "emoji": "🔬",
+    "slug": "science-nature"
+  },
+  {
+    "name": "Security & Privacy",
+    "emoji": "🔒",
+    "slug": "security-privacy"
+  },
+  {
+    "name": "Social & Communication",
+    "emoji": "💬",
+    "slug": "social-communication"
+  },
+  {
+    "name": "Space & Astronomy",
+    "emoji": "🚀",
+    "slug": "space-astronomy"
+  },
+  {
+    "name": "Sports",
+    "emoji": "⚽",
+    "slug": "sports"
+  },
+  {
+    "name": "Technology & Development",
+    "emoji": "💻",
+    "slug": "technology-development"
+  },
+  {
+    "name": "Transportation & Vehicles",
+    "emoji": "🚗",
+    "slug": "transportation-vehicles"
+  },
+  {
+    "name": "Utilities & Tools",
+    "emoji": "🔧",
+    "slug": "utilities-tools"
+  },
+  {
+    "name": "Weather & Climate",
+    "emoji": "🌦️",
+    "slug": "weather-climate"
+  }
+]
