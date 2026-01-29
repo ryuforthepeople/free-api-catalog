@@ -1,9 +1,12 @@
 <script setup lang="ts">
-const { getApis, getCategories, getAuthTypes, getStats } = useApiCatalog()
+import type { Api } from '~/composables/useApiCatalog'
+
+const { getApis, getApi, getCategories, getAuthTypes, getStats } = useApiCatalog()
 
 const search = ref('')
 const selectedCategory = ref('')
 const selectedAuth = ref('')
+const selectedApi = ref<Api | null>(null)
 
 const stats = getStats()
 const categories = getCategories()
@@ -17,8 +20,37 @@ const filteredApis = computed(() =>
   })
 )
 
+// Hash-based routing for dialog
+function openApi(api: Api) {
+  selectedApi.value = api
+  window.location.hash = `#/api/${api.id}`
+}
+
+function closeDialog() {
+  selectedApi.value = null
+  history.replaceState(null, '', window.location.pathname + window.location.search)
+}
+
+// Handle hash on load (direct link support)
+function checkHash() {
+  const match = window.location.hash.match(/^#\/api\/(\d+)$/)
+  if (match) {
+    const api = getApi(Number(match[1]))
+    if (api) selectedApi.value = api
+  }
+}
+
+onMounted(() => {
+  checkHash()
+  window.addEventListener('hashchange', checkHash)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('hashchange', checkHash)
+})
+
 useHead({
-  title: 'Free API Catalog — 500+ Free APIs for Developers',
+  title: 'Free API Catalog — 2000+ Free APIs for Developers',
 })
 </script>
 
@@ -27,8 +59,8 @@ useHead({
     <section class="hero">
       <h1>Free API Catalog</h1>
       <p class="hero__subtitle">
-        Curated collection of {{ stats.totalApis }} free APIs across {{ stats.totalCategories }} categories.
-        Search, filter, and find the perfect API for your next project.
+        {{ stats.totalApis }} free APIs across {{ stats.totalCategories }} categories.
+        Search, filter, and start building in minutes.
       </p>
     </section>
 
@@ -55,12 +87,23 @@ useHead({
     </p>
 
     <div class="api-grid">
-      <ApiCard v-for="api in filteredApis" :key="api.id" :api="api" />
+      <ApiCard
+        v-for="api in filteredApis"
+        :key="api.id"
+        :api="api"
+        @click="openApi(api)"
+      />
     </div>
 
     <p v-if="filteredApis.length === 0" class="no-results">
       No APIs found matching your criteria. Try adjusting your filters.
     </p>
+
+    <ApiDetailDialog
+      v-if="selectedApi"
+      :api="selectedApi"
+      @close="closeDialog"
+    />
   </div>
 </template>
 

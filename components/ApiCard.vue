@@ -14,11 +14,9 @@ function gradeColor(grade: string): string {
 </script>
 
 <template>
-  <article class="api-card">
+  <article class="api-card" role="button" tabindex="0" @keydown.enter="$emit('click')">
     <div class="api-card__header">
-      <h3 class="api-card__name">
-        <NuxtLink :to="`/api/${api.id}`">{{ api.name }}</NuxtLink>
-      </h3>
+      <h3 class="api-card__name">{{ api.name }}</h3>
       <span class="api-card__grade" :style="{ color: gradeColor(api.grade) }">
         {{ api.grade }}
       </span>
@@ -72,13 +70,8 @@ function gradeColor(grade: string): string {
   font-weight: 600;
 }
 
-.api-card__name a {
-  color: var(--color-text);
-  text-decoration: none;
-}
-
-.api-card__name a:hover {
-  color: var(--color-primary);
+.api-card {
+  cursor: pointer;
 }
 
 .api-card__grade {
