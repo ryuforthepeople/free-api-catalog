@@ -17,7 +17,7 @@ function gradeColor(grade: string): string {
   <article class="api-card">
     <div class="api-card__header">
       <h3 class="api-card__name">
-        <a :href="api.url" target="_blank" rel="noopener">{{ api.name }}</a>
+        <NuxtLink :to="`/api/${api.id}`">{{ api.name }}</NuxtLink>
       </h3>
       <span class="api-card__grade" :style="{ color: gradeColor(api.grade) }">
         {{ api.grade }}
